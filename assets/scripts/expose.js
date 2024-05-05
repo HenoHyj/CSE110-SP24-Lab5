@@ -12,7 +12,7 @@ function init() {
 
     // Changes the image and audio file based on the selected horn
     hornSelector.addEventListener('change', () => {
-        let hornValue = hornSelect.value;
+        let hornValue = hornSelector.value;
         imgElement.src = `assets/images/${hornValue}.svg`;
         audioElement.src = `assets/audio/${hornValue}.mp3`;
     });
