@@ -28,7 +28,7 @@ function init() {
     // Plays the sound
     soundButton.addEventListener('click', () => {
         //Special case when party horn is selected, we need to play the confetti
-        if (hornSelect.value === 'party-horn') {
+        if (hornSelector.value === 'party-horn') {
             const jsConfetti = new JSConfetti();
             jsConfetti.addConfetti();
         }
