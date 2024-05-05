@@ -3,17 +3,17 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  const imgElement = document.querySelector('img');
+    const imgElement = document.querySelector('img');
     const audioElement = document.querySelector('audio');
     const volumeSlider = document.getElementById('volume');
     const volumeIcon = document.querySelector('#volume-controls img');
-    const hornSelect = document.getElementById('horn-select');
-    const playButton = document.querySelector('button');
+    const hornSelector = document.getElementById('horn-select');
+    const soundButton = document.querySelector('button');
 
-    // Changes the image and audio source based on the selected horn
-    hornSelect.addEventListener('change', () => {
+    // Changes the image and audio file based on the selected horn
+    hornSelector.addEventListener('change', () => {
         let hornValue = hornSelect.value;
-        imgElement.src = `assets/images/${hornValue}.png`;
+        imgElement.src = `assets/images/${hornValue}.svg`;
         audioElement.src = `assets/audio/${hornValue}.mp3`;
     });
 
@@ -24,8 +24,9 @@ function init() {
         audioElement.volume = volumeLevel / 100;
     });
 
+
     // Plays the sound
-    playButton.addEventListener('click', () => {
+    soundButton.addEventListener('click', () => {
         //Special case when party horn is selected, we need to play the confetti
         if (hornSelect.value === 'party-horn') {
             const jsConfetti = new JSConfetti();
@@ -34,17 +35,21 @@ function init() {
         audioElement.play();
     });
 
+    // Changes the volume icon to the corresponding current audio volume level
     function updateVolumeIcon(volumeLevel) {
         if (volumeLevel === 0) {
             volumeIcon.src = 'assets/icons/volume-level-0.svg';
             volumeIcon.alt = 'Volume level 0';
-        } else if (volumeLevel < 33) {
+        } 
+        else if (volumeLevel < 33) {
             volumeIcon.src = 'assets/icons/volume-level-1.svg';
             volumeIcon.alt = 'Volume level 1';
-        } else if (volumeLevel < 67) {
+        } 
+        else if (volumeLevel < 67) {
             volumeIcon.src = 'assets/icons/volume-level-2.svg';
             volumeIcon.alt = 'Volume level 2';
-        } else {
+        } 
+        else {
             volumeIcon.src = 'assets/icons/volume-level-3.svg';
             volumeIcon.alt = 'Volume level 3';
         }
