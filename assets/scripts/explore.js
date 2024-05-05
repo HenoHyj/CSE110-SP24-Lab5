@@ -39,12 +39,12 @@ function init() {
     utterance.voice = availableVoices[selectedVoiceIndex];
 
     // Change image to smiling-open when begin speaking
-    addEventListener("start", () => {
+    utterance.addEventListener("start", () => {
       imgElement.src = 'assets/images/smiling-open.png';
     });
 
     // Change image back to smiling when finished speaking
-    addEventListener("end", () => {
+    utterance.addEventListener("end", () => {
       imgElement.src = 'assets/images/smiling.png';
     });
 
