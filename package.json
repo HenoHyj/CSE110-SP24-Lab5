@@ -10,8 +10,6 @@
   "jest": {
     "tranform": {},
     "verbose": true
-  },
-
-  "type": "module"
+  }
 }
 
